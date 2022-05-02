@@ -1,0 +1,65 @@
+.card {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: inline-block;
+    width: 250px;
+    overflow-x: hidden;
+}
+
+.card-text {
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 20pt;
+}
+
+#song-title {
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#song-artist {
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-stack {
+    margin: 10px;
+}
+
+.logo {
+    display: inline-block;
+    width: 100vw;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-bottom: 10px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.spotify-login {
+    float: right;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgb(24, 151, 45);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+.logo-img {
+    margin-left: 7px;
+}

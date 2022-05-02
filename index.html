@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="icon" href="/favicon.ico?v=1.1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <title>Tindify</title>
+    </head>
+    <body>
+        <div class="logo">
+            <img class="logo-img" src="assets/header.png" height="62px" />
+            <a class="spotify-login" href="/spotify.html">Log in with Spotify</a>
+        </div>
+        <div class="card-stack">
+            <div class="card">
+                <img id="cover" width="250px" height="250px" src="https://i.scdn.co/image/ab67616d0000b273a1a30cf13d406a0d5d33ae53" />
+                <div class="card-text">
+                    <h3 class="card-title" id="song-title">Title of Song</h3>
+                    <div id="song-artist">Artist</div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <button id="togglePlay">Toggle Play</button>
+        <script src="https://sdk.scdn.co/spotify-player.js"></script>
+        <script src="player.js"></script>
+    </body>
+</html>
