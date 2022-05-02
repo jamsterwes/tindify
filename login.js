@@ -1,6 +1,6 @@
 // Constants
 var client_id = "295da56c9fb14e10a173a5fac6a3ba4f";
-var redirect_uri = "http://tindify-beta.herokuapp.com/authcode.html";
+var redirect_uri = "https://tindify-beta.herokuapp.com/authcode.html";
 var show_dialog = true;
 // TODO: CHANGE THIS TO BE RANDOM!!!!
 var verifier = "EseehPSkqOk3dFfHRgqIEseehPSkqOk3dFfHRgqI33~";
