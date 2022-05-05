@@ -55,7 +55,7 @@
 
 #song-title {
     width: calc(100% - 20px);
-    font-size: 4vmin;
+    font-size: 5vmin;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -63,8 +63,8 @@
 }
 
 #song-artist {
-    width: 470px;
-    font-size: 2.5vmin;
+    width: calc(100% - 20px);
+    font-size: 3vmin;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -124,4 +124,39 @@
 }
 .back.disabled {
     background-image: url(/assets/rewind_button_disabled.png) !important;
+}
+
+/* Volume control */
+
+.volume-control {
+    height: 5vmin;
+    margin: 1.5vmin 0.75vmin 0;
+    --slider-fill: #007e2c;
+}
+
+.volume-control > input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.volume-control > input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    margin-top: -1.5vmin; /* Centers thumb on the track */
+    appearance: none;
+    height: 6vmin;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 6vmin;
+    border-radius: 50%;
+    background: var(--slider-icon) #00C445;
+    background-size: contain;
+    background-position: center;
+}
+
+.volume-control > input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--volume-slidebkg);
+    height: 2vmin;
+    border-radius: 1vmin;
 }
