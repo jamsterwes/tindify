@@ -2,12 +2,23 @@
 var client_id = "295da56c9fb14e10a173a5fac6a3ba4f";
 var redirect_uri = "https://tindify-beta.herokuapp.com/authcode.html";
 var show_dialog = true;
-// TODO: CHANGE THIS TO BE RANDOM!!!!
-var verifier = "EseehPSkqOk3dFfHRgqIEseehPSkqOk3dFfHRgqI33~";
 // TODO: state parameter
+
+var generateRandomString = function(length) {
+    var text = '';
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+};
 
 // Handle presenting spotify login page
 var getSpotifyURL = function(state) {
+    // Get verifier
+    var verifier = generateRandomString(65);
+    localStorage.setItem("verifier", verifier);
     // Get challenge
     var challengeArr = sha256.array(verifier);
     var challenge = btoa(String.fromCharCode(...challengeArr)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -33,6 +44,8 @@ var getAuthCode = function() {
 // Get authentication token
 // cb(accessToken, refreshToken)
 var getAuthToken = function(authCode, cb) {
+    var verifier = localStorage.getItem("verifier");
+
     var xhr = new XMLHttpRequest();
     var url = "https://accounts.spotify.com/api/token?"
               + "code=" + authCode

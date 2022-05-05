@@ -1,7 +1,8 @@
 .card {
+    background-color: white;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     display: inline-block;
-    width: 250px;
+    width: 500px;
     overflow-x: hidden;
 }
 
@@ -14,18 +15,18 @@
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
-    font-size: 20pt;
+    font-size: 18pt;
 }
 
 #song-title {
-    width: 230px;
+    width: 470px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 #song-artist {
-    width: 230px;
+    width: 470px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -33,11 +34,15 @@
 
 .card-stack {
     margin: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
+    position: absolute;
     display: inline-block;
     width: 100vw;
+    background-color: white;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin-bottom: 10px;
 }
@@ -45,6 +50,16 @@
 html, body {
     margin: 0;
     padding: 0;
+}
+
+#bkg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(77,207,0);
+    background: linear-gradient(180deg, hsl(98, 100%, 41%) 0%, hsl(164, 99%, 40%) 50%, hsl(219, 81%, 49%) 100%);
+    z-index: -100;
+    animation: 10s hue infinite;
 }
 
 .spotify-login {
@@ -62,4 +77,78 @@ html, body {
 
 .logo-img {
     margin-left: 7px;
+}
+
+@keyframes hue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(30deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+.controller {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons > button {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 6px white solid;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-size: cover;
+}
+
+.buttons > button.disabled {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 6px #a5a5a5 solid;
+    background-color: #a5a5a5 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.nope {
+    background-image: url(assets/nope_button.png);
+}
+
+.play {
+    background-image: url(assets/play_button.png);
+}
+
+.like {
+    background-image: url(assets/like_button.png);
+}
+
+.back {
+    background-image: url(assets/rewind_button.png);
+}
+
+.back.disabled {
+    background-image: url(assets/rewind_button_disabled.png) !important;
+}
+
+.feed {
+    display: inline-block;
+}
+
+.view-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 62px);
 }

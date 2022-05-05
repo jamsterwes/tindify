@@ -1,5 +1,6 @@
 var my_device_id = null;
 var last_track = {id: null};
+var next_tracks = [];
 
 var playSong = function(song_id) {
     var xhr = new XMLHttpRequest();
@@ -10,6 +11,33 @@ var playSong = function(song_id) {
 
     xhr.send(JSON.stringify({
         uris: ["spotify:track:" + song_id]
+    }));
+}
+
+var getRecommendations = function(cb) {
+    var seedArtists = ["6nB0iY1cjSY1KyhYyuIIKH", "5he5w2lnU9x7JFhnwcekXX", "5K4W6rqBFWDnAN6FQUkS6x"].join(",");
+    var seedGenres = [].join(",");
+    var seedTracks = [].join(",");
+    
+    var url = "https://api.spotify.com/v1/recommendations"
+              + "?seed_artists=" + seedArtists
+              + "&seed_genres=" + seedGenres
+              + "&seed_tracks=" + seedTracks;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("accessToken"));
+
+    xhr.onload = function() {
+        cb(JSON.parse(xhr.responseText));
+    };
+    
+    xhr.send(JSON.stringify({
+        seed_artists: seedArtists,
+        seed_genres: seedGenres,
+        seed_tracks: seedTracks
     }));
 }
 
@@ -39,7 +67,11 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     player.addListener('ready', ({ device_id }) => {
         my_device_id = device_id;
         console.log('Ready with Device ID', device_id);
-        playSong("1utTJXz5WzG0tONsJYKywl");
+        // Recommendations lol
+        getRecommendations(function(tracks) {
+            next_tracks = tracks.tracks.map(function(track) { return track.id; });
+            playSong(next_tracks[0]);
+        });
     });
 
     // Not Ready
@@ -62,6 +94,14 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     document.getElementById('togglePlay').onclick = function() {
         player.togglePlay();
     };
+
+    var playNewSong = function() {
+        next_tracks = next_tracks.slice(1);
+        playSong(next_tracks[0]);
+    };
+
+    document.getElementById('nope-button').onclick = playNewSong;
+    document.getElementById('like-button').onclick = playNewSong;
 
     player.connect();
 }
