@@ -45,6 +45,7 @@ var getAuthCode = function() {
 // cb(accessToken, refreshToken)
 var getAuthToken = function(authCode, cb) {
     var verifier = localStorage.getItem("verifier");
+    localStorage.setItem("verifier", "");
 
     var xhr = new XMLHttpRequest();
     var url = "https://accounts.spotify.com/api/token?"
