@@ -5,6 +5,11 @@ html, body {
     padding: 0;
 }
 
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
 #bkg {
     position: absolute;
     width: 100vw;
