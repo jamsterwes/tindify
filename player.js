@@ -40,7 +40,7 @@ var getRecommendations = function(cb) {
 window.onSpotifyWebPlaybackSDKReady = () => {
     const token = localStorage.getItem("accessToken");
     const player = new Spotify.Player({
-        name: "Wesley Quickstart Web Player",
+        name: "Tindify Web Player",
         getOAuthToken: cb => { cb(token); },
         volume: 0.5
     });
