@@ -50,8 +50,12 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     });
 
     // Update player state
-    player.addListener('player_state_changed', ({ position, duration, track_window: {current_track} }) => {
+    player.addListener('player_state_changed', ({ position, duration, paused, track_window: {current_track} }) => {
         console.log("Current Track: ", current_track);
+        // Remove playing from play button
+        document.getElementById("play-button").classList.remove("playing");
+        // If playing, add to play button
+        if (!paused) document.getElementById("play-button").classList.add("playing");
         // Get album cover
         var url = current_track.album.images[0].url;
         document.getElementById("cover").src = url;
@@ -91,7 +95,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
         console.error(message);
     });
 
-    document.getElementById('togglePlay').onclick = function() {
+    document.getElementById('play-button').onclick = function() {
         player.togglePlay();
     };
 

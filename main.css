@@ -112,7 +112,6 @@ html, body {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     background-size: cover;
 }
-
 .buttons > button.disabled {
     border-radius: 50%;
     width: 55px;
@@ -129,6 +128,11 @@ html, body {
 .play {
     background-image: url(assets/play_button.png);
 }
+.play.playing {
+    border: 6px #00c445 solid !important;
+    background-color: #00c445 !important;
+    background-image: url(assets/play_button_active.png) !important;
+}
 
 .like {
     background-image: url(assets/like_button.png);
@@ -137,7 +141,6 @@ html, body {
 .back {
     background-image: url(assets/rewind_button.png);
 }
-
 .back.disabled {
     background-image: url(assets/rewind_button_disabled.png) !important;
 }
