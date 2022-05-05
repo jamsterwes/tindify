@@ -30,7 +30,7 @@ var getSpotifyURL = function(state) {
                 + "&client_id=" + client_id
                 + "&redirect_uri=" + redirect_uri
                 + stateText
-                + "&scope=streaming%20user-read-email%20user-read-private"
+                + "&scope=streaming%20user-read-email%20user-read-private%20ugc-image-upload%20playlist-modify-public%20playlist-modify-private"
                 + "&code_challenge=" + challenge
                 + "&code_challenge_method=S256";
     return url;
