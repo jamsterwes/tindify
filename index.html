@@ -3,8 +3,9 @@
         <link rel="icon" href="/favicon.ico?v=1.1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="main.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css" type="text/css" />
+        <link rel="stylesheet" href="styles/player.css" type="text/css" />
         <title>Tindify</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -18,7 +19,7 @@
             <div class="feed">
                 <div class="card-stack">
                     <div class="card">
-                        <img id="cover" width="500px" height="500px" src="https://i.scdn.co/image/ab67616d0000b273a1a30cf13d406a0d5d33ae53" />
+                        <div id="cover"></div>
                         <div class="card-text">
                             <h3 class="card-title" id="song-title">Title of Song</h3>
                             <div id="song-artist">Artist</div>
@@ -27,7 +28,7 @@
                 </div>
                 <div class="controller">
                     <div class="buttons">
-                        <button class="back disabled"></button>
+                        <button class="back"></button>
                         <button class="nope" id="nope-button"></button>
                         <button class="play" id="play-button"></button>
                         <button class="like" id="like-button"></button>

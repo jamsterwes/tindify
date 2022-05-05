@@ -58,7 +58,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
         if (!paused) document.getElementById("play-button").classList.add("playing");
         // Get album cover
         var url = current_track.album.images[0].url;
-        document.getElementById("cover").src = url;
+        document.getElementById("cover").style = "background-image: url(" + url + ")";
         // Get song title
         var title = current_track.name;
         document.getElementById("song-title").innerText = title;

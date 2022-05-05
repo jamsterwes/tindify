@@ -1,0 +1,128 @@
+/* Player card */
+
+.card-stack {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    color: white;
+    background-color: #1d1d1d;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: inline-block;
+    overflow-x: hidden;
+}
+
+@media all and (orientation: portrait) {
+    .card {
+        width: 65vw;
+    }
+
+    #cover {
+        width: 65vw;
+        height: 75vw;
+    }
+}
+
+@media all and (orientation: landscape) {
+    .card {
+        width: 50vh;
+    }
+
+    #cover {
+        width: 50vh;
+        height: 60vh;
+    }
+}
+
+
+#cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.card-text {
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 18pt;
+}
+
+#song-title {
+    width: 470px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Fjalla One', "Poppins", sans-serif;
+}
+
+#song-artist {
+    width: 470px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Controller + Buttons */
+
+.controller {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons > button {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 6px #1d1d1d solid;
+    background-color: #1d1d1d;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-size: cover;
+}
+.buttons > button.disabled {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 6px #a5a5a5 solid;
+    background-color: #a5a5a5 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+/* Specific buttons */
+
+.nope {
+    background-image: url(/assets/nope_button.png);
+}
+
+.play {
+    background-image: url(/assets/play_button.png);
+}
+.play.playing {
+    border: 6px #00c445 solid !important;
+    background-color: #00c445 !important;
+    background-image: url(/assets/play_button_active.png) !important;
+}
+
+.like {
+    background-image: url(/assets/like_button.png);
+}
+
+.back {
+    background-image: url(/assets/rewind_button.png);
+}
+.back.disabled {
+    background-image: url(/assets/rewind_button_disabled.png) !important;
+}
