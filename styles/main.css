@@ -71,7 +71,7 @@ body {
 .view-align {
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 7.5vh;
     height: 100vh;
 }
 
