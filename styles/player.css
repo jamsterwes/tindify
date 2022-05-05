@@ -54,7 +54,7 @@
 }
 
 #song-title {
-    width: 470px;
+    width: calc(100% - 20px);
     font-size: 4vmin;
     white-space: nowrap;
     overflow: hidden;
