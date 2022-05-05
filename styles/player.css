@@ -16,23 +16,23 @@
 
 @media all and (orientation: portrait) {
     .card {
-        width: 65vw;
+        width: 75vw;
     }
 
     #cover {
-        width: 65vw;
-        height: 75vw;
+        width: 75vw;
+        height: 60vh;
     }
 }
 
 @media all and (orientation: landscape) {
     .card {
-        width: 50vh;
+        width: 60vw;
     }
 
     #cover {
-        width: 50vh;
-        height: 60vh;
+        width: 60vw;
+        height: 50vh;
     }
 }
 
@@ -51,11 +51,11 @@
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
-    font-size: 18pt;
 }
 
 #song-title {
     width: 470px;
+    font-size: 4vmin;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -64,6 +64,7 @@
 
 #song-artist {
     width: 470px;
+    font-size: 2.5vmin;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -72,33 +73,31 @@
 /* Controller + Buttons */
 
 .controller {
-    margin-top: 25px;
+    margin-top: 2.5vh;
     display: flex;
     justify-content: center;
 }
 
 .buttons {
-    width: 350px;
+    width: 70vw;
     display: flex;
     justify-content: space-evenly;
 }
 
 .buttons > button {
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    border: 6px #1d1d1d solid;
+    width: 10vmin;
+    height: 10vmin;
+    border: 1vw #1d1d1d solid;
     background-color: #1d1d1d;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .buttons > button.disabled {
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    border: 6px #a5a5a5 solid;
+    border: 1vw #a5a5a5 solid;
     background-color: #a5a5a5 !important;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 /* Specific buttons */

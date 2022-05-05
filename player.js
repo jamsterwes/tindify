@@ -34,11 +34,7 @@ var getRecommendations = function(cb) {
         cb(JSON.parse(xhr.responseText));
     };
     
-    xhr.send(JSON.stringify({
-        seed_artists: seedArtists,
-        seed_genres: seedGenres,
-        seed_tracks: seedTracks
-    }));
+    xhr.send();
 }
 
 window.onSpotifyWebPlaybackSDKReady = () => {
